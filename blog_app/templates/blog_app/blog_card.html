@@ -1,0 +1,19 @@
+<div class="col">
+    <div class="card shadow-sm">
+    <img src="{{post.thumbnail.url}}" height="250">
+    <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body|safe|truncatechars:100 }} </p>
+        <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary"><a class="btn-outline-secondary text-decoration-none" href="{% url 'blog_app:single_post' post.id %}">View</a></button>
+            {% if user.is_authenticated %}
+            <button type="button" class="btn btn-sm btn-outline-secondary"><a class="btn-outline-secondary text-decoration-none" href="/admin/blog_app/post/{{post.id}}/change/">Edit</a></button>
+            {% endif %}
+            
+        </div>
+        
+        </div>
+    </div>
+    </div>
+</div>

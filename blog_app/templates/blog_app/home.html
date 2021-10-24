@@ -1,0 +1,14 @@
+{% extends 'blog_app/blog_structure.html' %}
+
+{% block header_block %}
+    {% include 'blog_app/header.html' %}
+{% endblock header_block %}
+
+
+{% block blog_card_block %}
+    {% for post in posts %}
+        {% include 'blog_app/blog_card.html' with post=post %}
+    {% endfor %}
+{% endblock blog_card_block %}
+
+
