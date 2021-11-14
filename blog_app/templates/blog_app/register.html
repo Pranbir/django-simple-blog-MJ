@@ -1,0 +1,25 @@
+{% extends 'blog_app/blog_structure.html' %}
+{% block blog_card_block %}
+<form class="col-sm-4 offset-sm-4" method="post" action="{% url 'blog_app:register' %}">
+    <h2>Registration Form</h2>
+    <p class="text-danger">{{msg}}</p>
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input name="email" type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+   
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+{% endblock blog_card_block %}
+
